@@ -1,0 +1,69 @@
+This txt-file will explain what the different files in this folder is used for.
+
+When using the files in this folder, will a few steps be required to do before hand.
+First: Download some data for Rucio.
+Second: Create Ntuples, the files I have for this are found in: /groups/hep/madsj/work/ntupleproduction
+There should be some installation guide in /groups/hep/madsj/
+Third: Create hdf5 files from the ntuples. I got mine in hdf5Prod/
+
+My files start here: 
+
+Fourth: After creating the Hdf5 files, I make some selections - the files which end in "Hdf5.py"
+These files are both used in reconstruction and training. I'll assume you'll need to make some models first.
+Fifth: Before the models are created, make some reweighed data.
+Sixth: Train and test the models.
+Seventh: Reconstruct the models.
+
+
+Selection:
+DATA_ZllgHdf5.py: Selects Z->llg events in data. Can't apply signal/background tag.
+ggHdf5.py: Selects H->gamma gamma events in MC.
+HllgHdf5.py: Selects H->Z(ll) gamma events. Looks like an old version
+LeptonHdf5: Selects single leptons e and mu.
+PhotonHdf5.py: Selects single photons.
+ZllgHdf5.py: Selects Z->ll gamma events.
+ZllHdf5.py: Selects Z->ll events.
+
+Reweighing:
+Reweight.py: Reweighs the data files, should be done before training.
+
+Training and testing:
+LGBM_train.py: Training and validation of models
+LGBM_predict.py: Testing of models
+Please make sure that the models have the same variables in LGBM_train.py, LGBM_predict.py and returnLGBMScores.py. 
+
+Reconstruction:
+Compare_LGBM_ATLAS.py: Applies models and comparing to cuts made by ATLAS, quite important once the models have been created
+
+Misc:
+Compare_2_rocs.py: Plotting the ROC curves for multiple models, for comparison. Fluff
+Compare_2_rocs.py: Plotting Roc Curves for multiple models. Fluff
+Datafit.py: Havn't gotten this to work yet. It fits the distributions, heavily based on codes from SDA.
+muoGamPredict.py: SDA fitting file
+peakfit.py: SDA fitting file
+phoEtplot.py: Plotting the et for different part types (photon files)
+plotscores.py: Plotting the different LGBM scores for the models set up for llgamma interactions.
+returnLGBMScores.py: Returns the LGBM scores for a model.
+Shapplot.py: Plots SHAP values, for given models.
+Troels_School_Project.py: Selects H->gamma gamma interactions and calculates their isolation and identification values using my models. For a high school project for Troels
+Utils: Various functions used in the scripts.
+Weightplots.py: Plotting the weights - so a retraining of the Reweight.py file wont be needed.
+Zllg_Compare_PidIso.py: Comparison between PID and ISO model.
+Zplotvar.py: Plots all variables in a h5 file.
+LGBM_sel_analysis.py: Compares signal and background for some of the results from LGBM: 
+
+Skal slettes:
+Hgg_LGBMATLAS_sel.py
+Hllg_ATLAS_sel.py
+Hllg_LGBM_sel.py
+HllgHdf5 copy.py
+LlvsLlgamInvM.py
+ModelAnalysis
+Troels_hgg.py
+ZeegamHdf5.py
+Zllghdf5_backup
+All Zllg_LGBM/ATLAS/LGBMATLAS_single/multiple.py
+ZtoEpairhdf5.py
+
+Outdated, skal slettes: 
+

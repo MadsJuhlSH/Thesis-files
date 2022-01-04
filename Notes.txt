@@ -1,0 +1,19 @@
+So for the thesis I will need:
+Zeegam and Zmumugam
+Gamma+jet
+H->Zgamma 
+H-> gam*gam
+H->gamgam
+
+For Zeegam:
+I think I will need Iso/Pid for Electrons and photons? 
+Found that for electrons in Zee_v1
+So need to figure out how to do for photons
+
+For Zmumugam: 
+Will most likely need the same for muons and photons
+Need to figure out how to do it for muons
+Photons can use same results as from eegam?
+
+Rest: 
+Not sure, talk to Troels.
